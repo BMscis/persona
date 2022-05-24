@@ -147,6 +147,8 @@ export default function Home() {
           name="description"
           content="The portfolio of frontend developer and blockchain developer, Melvin Wafula"
         />
+        <meta property="og:title" content="Melvin Wafula | Frontend Developer & Blockchain Developer" />
+        <meta name="image" property="og:image" content="/images/persona.png" />
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
 
