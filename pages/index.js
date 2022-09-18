@@ -44,6 +44,24 @@ const projects = [
     repo: "https://github.com/BMscis/reach-tutorial-svelte",
     isSiteLive: true,
   },
+  {
+    title: "Moora game with Reach",
+    overview:
+      "Morra is a hand game that dates back thousands of years to ancient Roman and Greek times. Each player simultaneously reveals their hand, extending any number of fingers, and calls out a number. Any player who successfully guesses the total number of fingers revealed by all players combined scores a point.",
+    stack: ["Html", "css", "Reach", "Svelte"],
+    link: null,
+    repo: "https://github.com/BMscis/Ascent/tree/master/MooraWithReach",
+    isSiteLive: true,
+  },
+  {
+    title: "Reach developer Ideas.",
+    overview:
+      "Some blockchain Ideas that I have been a part of using Reach.",
+    stack: ["Html", "css", "Reach", "Svelte"],
+    link: null,
+    repo: "https://github.com/BMscis/WeeklyChallenge",
+    isSiteLive: true,
+  },
 ];
 
 const getDimensions = (ele) => {
@@ -504,8 +522,8 @@ export default function Home() {
                   sharpening our tools and preparing to battle an oppressive regime.
                 </p>
                 <p className="text-lg">
-                  Due to popular demand, I am working on a deep dive into web3 using Javascript and 
-                  {''}
+                  Due to popular demand, I am working on a deep dive into web3 using Javascript and
+                   {''}
                   <a
                     href="https://docs.reach.sh/#reach-top"
                     target="_blank"
@@ -834,6 +852,85 @@ export default function Home() {
           <div className="flex flex-col w-full mb-12">
             {/* Project One */}
             <FeaturedProjectCard
+              title={"Jasiri Protocol powered by Algorand"}
+              status={"Coming Soon"}
+              description={`A crypto-economic primitive powering fast, below-zero micropayments, and unlocking dead capital from real-world assets and commodities in one piece of novel, robust infrastructure`}
+              float={`right-0`}
+              flexDirection={`flex-col lg:flex-row`}
+              imgWidth={"1366"}
+              imgHeight={"666"}
+              imgSrc={"/projects/jasiri.png"}
+              liveLink={"https://medium.com/@blog.jasiriprotocol.org/incentivized-testnet-participation-jasiri-web-extension-7f14cffece08"}
+              repoLink={"https://github.com/Safariblocks-LTD/jasiri-web-extension"}
+              stack={
+                <>
+                  <Icon
+                    IconType={Html}
+                    title="HTML"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={ReachIcon}
+                    title="Reach"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={ReactJs}
+                    title="React"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={AwsIcon}
+                    title="Aws Cloud"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+                </>
+              }
+            />
+            <FeaturedProjectCard
               title={"NFTea Auction With Reach"}
               status={"Just launched"}
               description={`Deploy an auction contract with reach on Etherium and Algorand`}
@@ -880,7 +977,7 @@ export default function Home() {
 
                   <Icon
                     IconType={SvelteIcon}
-                    title="Svekte"
+                    title="Svelte"
                     columnSizing={"w-auto"}
                     width={"w-6"}
                     height={"h-6"}
