@@ -160,12 +160,12 @@ export default function Home() {
       }`}
     >
       <Head>
-        <title>Melvin Wafula | Frontend Developer & Blockchain Developer</title>
+        <title>Melvin Wafula | Backend Developer & Blockchain Developer</title>
         <meta
           name="description"
-          content="The portfolio of frontend developer and blockchain developer, Melvin Wafula"
+          content="The portfolio of backend developer and blockchain developer, Melvin Wafula"
         />
-        <meta property="og:title" content="Melvin Wafula | Frontend Developer and Blockchain Developer"></meta>
+        <meta property="og:title" content="Melvin Wafula | Backend Developer and Blockchain Developer"></meta>
         <meta property="og:image" content="https://github.com/BMscis/persona/blob/2927783b3ac490cd28efa5481d9ced2daad62a1d/public/projects/persona.png"></meta>
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
@@ -466,7 +466,7 @@ export default function Home() {
                   eraseSpeed={30}
                   eraseDelay={1500}
                   text={[
-                    `Frontend Developer`,
+                    `Backend Developer`,
                     `Blockchain Developer`,
                     `Teacher`,
                     `WEB3`,
@@ -501,7 +501,7 @@ export default function Home() {
             <div className="flex flex-col-reverse items-start w-full md:flex-row">
               <div className="flex flex-col w-full md:pr-8 md:w-3/5">
                 <p className="text-lg">
-                  Hello! I'm Melvin and I'm a frontend developer,
+                  Hello! I'm Melvin and I'm a backend developer,
                   blockchain developer from Nairobi, Kenya.
                 </p>
                 <p className="text-lg">
@@ -852,15 +852,94 @@ export default function Home() {
           <div className="flex flex-col w-full mb-12">
             {/* Project One */}
             <FeaturedProjectCard
+              title={"SmartSeat Blockchain"}
+              status={"Live on Testnet"}
+              description={`A ticketing platform on the blockchain designed to empower the event creators`}
+              float={`right-0`}
+              flexDirection={`flex-col lg:flex-row`}
+              imgWidth={"1366"}
+              imgHeight={"666"}
+              imgSrc={"/projects/smartseat.png"}
+              liveLink={"https://bmscis.github.io/smartland/"}
+              repoLink={"https://github.com/BMscis/smartland/tree/Edit"}
+              stack={
+                <>
+                  <Icon
+                    IconType={Html}
+                    title="HTML"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={ReachIcon}
+                    title="Reach"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={ReactJs}
+                    title="React"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+
+                  <Icon
+                    IconType={AwsIcon}
+                    title="Aws Cloud"
+                    columnSizing={"w-auto"}
+                    width={"w-6"}
+                    height={"h-6"}
+                    flexDirection={"flex-row"}
+                    padding={"p-0"}
+                    titleMargins={"my-0 ml-1"}
+                    titleSize={"text-sm"}
+                    marginBottom={"mb-4"}
+                    marginRight={"mr-3"}
+                    textTransform={"uppercase"}
+                    fixedHeight={"h-auto"}
+                  />
+                </>
+              }
+            />
+            <FeaturedProjectCard
               title={"Jasiri Protocol powered by Algorand"}
-              status={"Coming Soon"}
+              status={"Live on Testnet"}
               description={`A crypto-economic primitive powering fast, below-zero micropayments, and unlocking dead capital from real-world assets and commodities in one piece of novel, robust infrastructure`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
               imgWidth={"1366"}
               imgHeight={"666"}
               imgSrc={"/projects/jasiri.png"}
-              liveLink={"https://medium.com/@blog.jasiriprotocol.org/incentivized-testnet-participation-jasiri-web-extension-7f14cffece08"}
+              liveLink={"https://jasiriprotocol.org/"}
               repoLink={"https://github.com/Safariblocks-LTD/jasiri-web-extension"}
               stack={
                 <>

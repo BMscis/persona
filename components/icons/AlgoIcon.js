@@ -2,9 +2,13 @@ import React from "react";
 
 const AlgoIcon = () => {
   return (
-<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 35.9 36">
-    <polygon points="35.9 36 30.3 36 26.6 22.4 18.8 36 12.5 36 24.7 14.9 22.7 7.6 6.3 36 0 36 20.8 0 26.3 0 28.7 8.9 34.4 8.9 30.5 15.7 35.9 36" style={{fill:`#070707`}} />
-</svg>
+    <svg viewBox="0 0 128 128">
+      <g className="text-white transition-all duration-200 ease-in-out fill-current opacity-20 group-hover:opacity-100 group-hover:text-brand">
+      <rect width="114" height="114" style={{opacity:0}} />
+    <polygon
+        points="83.9 84 75.5 84 70 63.6 58.3 84 48.8 84 67.1 52.4 64.1 41.4 39.5 84 30.1 84 61.3 30 69.5 30 73.1 43.4 81.7 43.4 75.8 53.5 83.9 84" />
+      </g>
+    </svg>
   );
 };
 
