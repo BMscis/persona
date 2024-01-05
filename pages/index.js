@@ -1,65 +1,64 @@
-import React, { useState, useEffect, useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import ReactTypingEffect from "react-typing-effect";
+import React, { useState, useEffect, useRef } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import ReactTypingEffect from 'react-typing-effect';
 
-import Icon from "../components/Icon";
+import Icon from '../components/Icon';
 // Icons
-import Html from "../components/icons/Html";
-import Css from "../components/icons/Css";
-import Javascript from "../components/icons/Javascript";
-import ReachIcon from "../components/icons/ReachIcon";
-import SvelteIcon from "../components/icons/SvelteIcon";
-import AlgoIcon from "../components/icons/AlgoIcon";
-import EthIcon from "../components/icons/EthIcon";
-import Bmscis from "../components/icons/Bmscis";
-import Tailwind from "../components/icons/Tailwind";
-import Bootstrap from "../components/icons/Bootstrap";
-import Sass from "../components/icons/Sass";
-import ReactJs from "../components/icons/ReactJs";
-import NextJs from "../components/icons/NextJs";
-import NodeJs from "../components/icons/NodeJs";
-import Firebase from "../components/icons/Firebase";
-import Figma from "../components/icons/Figma";
-import Photoshop from "../components/icons/Photoshop";
-import Illustrator from "../components/icons/Illustrator";
-import AfterEffects from "../components/icons/AfterEffects";
-import AdobeXd from "../components/icons/AdobeXd";
+import Html from '../components/icons/Html';
+import Css from '../components/icons/Css';
+import Javascript from '../components/icons/Javascript';
+import ReachIcon from '../components/icons/ReachIcon';
+import SvelteIcon from '../components/icons/SvelteIcon';
+import AlgoIcon from '../components/icons/AlgoIcon';
+import EthIcon from '../components/icons/EthIcon';
+import Bmscis from '../components/icons/Bmscis';
+import Tailwind from '../components/icons/Tailwind';
+import Bootstrap from '../components/icons/Bootstrap';
+import Sass from '../components/icons/Sass';
+import ReactJs from '../components/icons/ReactJs';
+import NextJs from '../components/icons/NextJs';
+import NodeJs from '../components/icons/NodeJs';
+import Firebase from '../components/icons/Firebase';
+import Figma from '../components/icons/Figma';
+import Photoshop from '../components/icons/Photoshop';
+import Illustrator from '../components/icons/Illustrator';
+import AfterEffects from '../components/icons/AfterEffects';
+import AdobeXd from '../components/icons/AdobeXd';
 // Project Card
-import ProjectCard from "../components/ProjectCard";
-import GitHubProfile from "../components/icons/GitHubProfile";
-import TwitterProfile from "../components/icons/TwitterProfile";
-import LinkedInProfile from "../components/icons/LinkedInProfile";
-import FeaturedProjectCard from "../components/FeaturedProjectCard";
-import AwsIcon from "../components/icons/AwsIcon";
+import ProjectCard from '../components/ProjectCard';
+import GitHubProfile from '../components/icons/GitHubProfile';
+import TwitterProfile from '../components/icons/TwitterProfile';
+import LinkedInProfile from '../components/icons/LinkedInProfile';
+import FeaturedProjectCard from '../components/FeaturedProjectCard';
+import AwsIcon from '../components/icons/AwsIcon';
+import Python from '../components/icons/python';
 
 const projects = [
   {
-    title: "Rock Paper Scissors with Reach & SVelte",
-    overview:
-      "Deploy a rock paper scissors contract on Etherium with Reach.",
-    stack: ["Html", "css", "Reach", "Eth"],
+    title: 'Rock Paper Scissors with Reach & SVelte',
+    overview: 'Deploy a rock paper scissors contract on Etherium with Reach.',
+    stack: ['Html', 'css', 'Reach', 'Eth'],
     link: null,
-    repo: "https://github.com/BMscis/reach-tutorial-svelte",
+    repo: 'https://github.com/BMscis/reach-tutorial-svelte',
     isSiteLive: true,
   },
   {
-    title: "Moora game with Reach",
+    title: 'Moora game with Reach',
     overview:
-      "Morra is a hand game that dates back thousands of years to ancient Roman and Greek times. Each player simultaneously reveals their hand, extending any number of fingers, and calls out a number. Any player who successfully guesses the total number of fingers revealed by all players combined scores a point.",
-    stack: ["Html", "css", "Reach", "Svelte"],
+      'Morra is a hand game that dates back thousands of years to ancient Roman and Greek times. Each player simultaneously reveals their hand, extending any number of fingers, and calls out a number. Any player who successfully guesses the total number of fingers revealed by all players combined scores a point.',
+    stack: ['Html', 'css', 'Reach', 'Svelte'],
     link: null,
-    repo: "https://github.com/BMscis/Ascent/tree/master/MooraWithReach",
+    repo: 'https://github.com/BMscis/Ascent/tree/master/MooraWithReach',
     isSiteLive: true,
   },
   {
-    title: "Reach developer Ideas.",
-    overview:
-      "Some blockchain Ideas that I have been a part of using Reach.",
-    stack: ["Html", "css", "Reach", "Svelte"],
+    title: 'Reach developer Ideas.',
+    overview: 'Some blockchain Ideas that I have been a part of using Reach.',
+    stack: ['Html', 'css', 'Reach', 'Svelte'],
     link: null,
-    repo: "https://github.com/BMscis/WeeklyChallenge",
+    repo: 'https://github.com/BMscis/WeeklyChallenge',
     isSiteLive: true,
   },
 ];
@@ -78,8 +77,8 @@ const getDimensions = (ele) => {
 
 const scrollTo = (ele) => {
   ele.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
+    behavior: 'smooth',
+    block: 'start',
   });
 };
 
@@ -106,12 +105,12 @@ export default function Home() {
 
   useEffect(() => {
     const sectionRefs = [
-      { section: "home", ref: homeRef, id: 1 },
-      { section: "about", ref: aboutRef, id: 2 },
-      { section: "skills", ref: skillsRef, id: 3 },
-      { section: "my-work", ref: myWorkRef, id: 4 },
-      { section: "blog", ref: blogRef, id: 5 },
-      { section: "contact", ref: contactRef, id: 6 },
+      { section: 'home', ref: homeRef, id: 1 },
+      { section: 'about', ref: aboutRef, id: 2 },
+      { section: 'skills', ref: skillsRef, id: 3 },
+      { section: 'my-work', ref: myWorkRef, id: 4 },
+      { section: 'blog', ref: blogRef, id: 5 },
+      { section: 'contact', ref: contactRef, id: 6 },
     ];
 
     const handleScroll = () => {
@@ -135,28 +134,28 @@ export default function Home() {
     };
 
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [visibleSection]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () =>
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () =>
         setScrolling(window.pageYOffset > 110)
       );
     }
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
   });
 
   return (
     <div
       className={`relative w-full bg-right-bottom bg-cover bg-dark overflow-auto min-h-screen ${
-        navbarOpen ? "overflow-hidden" : "overflow-auto"
+        navbarOpen ? 'overflow-hidden' : 'overflow-auto'
       }`}
     >
       <Head>
@@ -165,8 +164,14 @@ export default function Home() {
           name="description"
           content="The portfolio of backend developer and blockchain developer, Melvin Wafula"
         />
-        <meta property="og:title" content="Melvin Wafula | Backend Developer and Blockchain Developer"></meta>
-        <meta property="og:image" content="https://github.com/BMscis/persona/blob/2927783b3ac490cd28efa5481d9ced2daad62a1d/public/projects/persona.png"></meta>
+        <meta
+          property="og:title"
+          content="Melvin Wafula | Backend Developer and Blockchain Developer"
+        ></meta>
+        <meta
+          property="og:image"
+          content="https://github.com/BMscis/persona/blob/2927783b3ac490cd28efa5481d9ced2daad62a1d/public/projects/persona.png"
+        ></meta>
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
 
@@ -174,8 +179,8 @@ export default function Home() {
       <div
         className={`fixed w-full z-50 h-screen pt-24 bg-darker bg-opacity-100 transform delay-100 transition-all duration-300 ${
           navbarOpen
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-full"
+            ? 'opacity-100 translate-x-0'
+            : 'opacity-0 -translate-x-full'
         }`}
       >
         <div className="container relative mx-auto">
@@ -185,9 +190,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "home"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'home'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     setNavbarOpen(false);
@@ -201,9 +206,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "about"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'about'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     setNavbarOpen(false);
@@ -217,9 +222,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "skills"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'skills'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     setNavbarOpen(false);
@@ -233,9 +238,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "my-work"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'my-work'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     setNavbarOpen(false);
@@ -251,9 +256,9 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out text-white ${
-                    visibleSection === "blog"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'blog'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                 >
                   Blog
@@ -263,9 +268,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link text-xl font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "contact"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'contact'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     setNavbarOpen(false);
@@ -291,7 +296,7 @@ export default function Home() {
       {/* Header and Nav */}
       <header
         className={`header top-0 mx-auto flex items-center py-6 z-50 fixed w-full transition-all duration-500 h-24 ${
-          scrolling && !navbarOpen ? "bg-dark" : "bg-transparent"
+          scrolling && !navbarOpen ? 'bg-dark' : 'bg-transparent'
         }`}
         ref={headerRef}
       >
@@ -299,20 +304,20 @@ export default function Home() {
         <div className="container relative flex items-center mx-auto">
           {/* Logo */}
           <div className="z-50 w-12 h-12">
-          <Icon
+            <Icon
               IconType={Bmscis}
               title="Bmscis"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
           </div>
           {/* Nav */}
@@ -322,9 +327,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "home"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'home'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     scrollTo(homeRef.current);
@@ -337,9 +342,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "about"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'about'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     scrollTo(aboutRef.current);
@@ -352,9 +357,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "skills"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'skills'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     scrollTo(skillsRef.current);
@@ -367,9 +372,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "my-work"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'my-work'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     scrollTo(myWorkRef.current);
@@ -384,9 +389,9 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out text-white ${
-                    visibleSection === "blog"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'blog'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                 >
                   Blog
@@ -396,9 +401,9 @@ export default function Home() {
                 <button
                   href="#"
                   className={`header_link font-semibold transition-all duration-300 ease-in-out ${
-                    visibleSection === "contact"
-                      ? "selected delay-300"
-                      : "opacity-50 hover:opacity-100 border-b-2 border-transparent"
+                    visibleSection === 'contact'
+                      ? 'selected delay-300'
+                      : 'opacity-50 hover:opacity-100 border-b-2 border-transparent'
                   }`}
                   onClick={() => {
                     scrollTo(contactRef.current);
@@ -424,19 +429,19 @@ export default function Home() {
                     <span
                       aria-hidden="true"
                       className={`block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out ${
-                        navbarOpen ? "rotate-45" : "-translate-y-1.5"
+                        navbarOpen ? 'rotate-45' : '-translate-y-1.5'
                       }`}
                     ></span>
                     <span
                       aria-hidden="true"
                       className={`block absolute  h-0.5 w-5 bg-current   transform transition duration-500 ease-in-out ${
-                        navbarOpen ? "opacity-0" : "opacity-100"
+                        navbarOpen ? 'opacity-0' : 'opacity-100'
                       }`}
                     ></span>
                     <span
                       aria-hidden="true"
                       className={`block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out ${
-                        navbarOpen ? "-rotate-45" : "translate-y-1.5"
+                        navbarOpen ? '-rotate-45' : 'translate-y-1.5'
                       }`}
                     ></span>
                   </div>
@@ -501,42 +506,45 @@ export default function Home() {
             <div className="flex flex-col-reverse items-start w-full md:flex-row">
               <div className="flex flex-col w-full md:pr-8 md:w-3/5">
                 <p className="text-lg">
-                  Hello! I'm Melvin and I'm a backend developer,
-                  blockchain developer from Nairobi, Kenya.
+                  Hello! I'm Melvin and I'm a backend developer, blockchain
+                  developer from Nairobi, Kenya.
                 </p>
                 <p className="text-lg">
-                  I started experimenting with Python in University and got obsessed
-                  with starring at the computer and pressing buttons until it produced
-                  an output.
+                  I started experimenting with Python in University and got
+                  obsessed with starring at the computer and pressing buttons
+                  until it produced an output.
                 </p>
                 <p className="text-lg">
-                  Neadless to say that I have tested almost every new package and new program;
-                  from coding to design: until money ran out. That's why I love open-source.
-                  Computer graphic softwares like blender offer what adobe offers and more, without the 
-                  guilt of knowing that you're using a cracked version of the software.
+                  Neadless to say that I have tested almost every new package
+                  and new program; from coding to design: until money ran out.
+                  That's why I love open-source. Computer graphic softwares like
+                  blender offer what adobe offers and more, without the guilt of
+                  knowing that you're using a cracked version of the software.
                 </p>
                 <p className="text-lg">
-                  Then blockchain came along, and the future seems hopeful again. Blockchain 
-                  single handedly carried humanity through a pandemic. Blockhain was a silver lining
-                  for many, before blockchain young Africans did not exists, and now here we are
-                  sharpening our tools and preparing to battle an oppressive regime.
+                  Then blockchain came along, and the future seems hopeful
+                  again. Blockchain single handedly carried humanity through a
+                  pandemic. Blockhain was a silver lining for many, before
+                  blockchain young Africans did not exists, and now here we are
+                  sharpening our tools and preparing to battle an oppressive
+                  regime.
                 </p>
                 <p className="text-lg">
-                  Due to popular demand, I am working on a deep dive into web3 using Javascript and
-                   {''}
+                  I have focused mainly on the Algorand blockain due to its
+                  reliability and it has not let me down. With tools like{' '}
                   <a
-                    href="https://docs.reach.sh/#reach-top"
+                    href="https://developer.algorand.org/docs/get-started/algokit/"
                     target="_blank"
                     className="underline-link"
                     rel="noreferrer"
                   >
-                    Reach
-                  </a>
-                  , so I like to keep busy!
+                    Algokit
+                  </a>{' '}
+                  , programming in algorand has never been easier.
                 </p>
                 <p className="text-lg">
-                  Take a look at my work below to see what I'm working on,
-                  and get in touch if you'd like to work together!
+                  Take a look at my work below to see what I'm working on, and
+                  get in touch if you'd like to work together!
                 </p>
                 {/* <button className="self-start inline-block mt-8 btn-outline btn-lg">
                   See my CV
@@ -548,7 +556,7 @@ export default function Home() {
                   className="overflow-hidden rounded-md"
                   width={880}
                   height={880}
-                  alt={"Melvin Wafula headshot"}
+                  alt={'Melvin Wafula headshot'}
                 />
               </div>
             </div>
@@ -570,270 +578,287 @@ export default function Home() {
             <Icon
               IconType={Html}
               title="HTML"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* CSS */}
             <Icon
               IconType={Css}
               title="CSS"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Sass */}
             <Icon
               IconType={Sass}
               title="Sass"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
-            {/* Algorand */}
+            {/* Python */}
+            <Icon
+              IconType={Python}
+              title="Python"
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
+            />
+            {/* Pyteal */}
             <Icon
               IconType={AlgoIcon}
-              title="Agorand"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              title="Pyteal"
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
-            {/* Etherium */}
+            {/* Beaker */}
             <Icon
-              IconType={EthIcon}
-              title="Etherium"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              IconType={AlgoIcon}
+              title="Beaker"
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
+
             {/* Tailwind */}
             <Icon
               IconType={Tailwind}
               title="Tailwind"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Javascript */}
             <Icon
               IconType={Javascript}
               title="Javascript"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* React */}
             <Icon
               IconType={ReactJs}
               title="React"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Next */}
             <Icon
               IconType={SvelteIcon}
               title="Svelte Framework"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Node */}
             <Icon
               IconType={NodeJs}
               title="Node"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Firebase */}
             <Icon
               IconType={Firebase}
               title="Firebase"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Photoshop */}
             <Icon
               IconType={Photoshop}
               title="Photoshop"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Illustrator */}
             <Icon
               IconType={Illustrator}
               title="Illustrator"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* After Effects */}
             <Icon
               IconType={AfterEffects}
               title="After Effects"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Adobe XD */}
             <Icon
               IconType={AdobeXd}
               title="Adobe XD"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
 
             {/* Reach */}
             <Icon
               IconType={ReachIcon}
               title="Reach"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
           </div>
         </section>
@@ -852,370 +877,480 @@ export default function Home() {
           <div className="flex flex-col w-full mb-12">
             {/* Project One */}
             <FeaturedProjectCard
-              title={"SmartSeat Blockchain"}
-              status={"Live on Testnet"}
+              title={'Algobambino Marketplace'}
+              status={'Live on Mainnet'}
+              description={`Algobamino is a marketplace with a variety of tools such as auctions, raffles, and purchasing of NFTs. It also includes a swap with various coins`}
+              float={`right-0`}
+              flexDirection={`flex-col lg:flex-row`}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/algobambino.png'}
+              liveLink={'https://www.algobambino.xyz/algobambinoModel'}
+              repoLink={'https://github.com/BMscis/bambinotest'}
+              stack={
+                <>
+                  <Icon
+                    IconType={Html}
+                    title="HTML"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+
+                  <Icon
+                    IconType={AlgoIcon}
+                    title="Pyteal"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+                  <Icon
+                    IconType={ReachIcon}
+                    title="Reach"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+
+                  <Icon
+                    IconType={ReactJs}
+                    title="React"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+
+                  <Icon
+                    IconType={NextJs}
+                    title="Nextjs"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+
+                  <Icon
+                    IconType={AwsIcon}
+                    title="Aws Cloud"
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
+                  />
+                </>
+              }
+            />
+            <FeaturedProjectCard
+              title={'SmartSeat Blockchain'}
+              status={'Live on Testnet'}
               description={`A ticketing platform on the blockchain designed to empower the event creators`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
-              imgWidth={"1366"}
-              imgHeight={"666"}
-              imgSrc={"/projects/smartseat.png"}
-              liveLink={"https://bmscis.github.io/smartland/"}
-              repoLink={"https://github.com/BMscis/smartland/tree/Edit"}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/smartseat.png'}
+              liveLink={'https://bmscis.github.io/smartland/'}
+              repoLink={'https://github.com/BMscis/smartland/tree/Edit'}
               stack={
                 <>
                   <Icon
                     IconType={Html}
                     title="HTML"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={ReachIcon}
                     title="Reach"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={ReactJs}
                     title="React"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={AwsIcon}
                     title="Aws Cloud"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
                 </>
               }
             />
             <FeaturedProjectCard
-              title={"Jasiri Protocol powered by Algorand"}
-              status={"Live on Testnet"}
+              title={'Jasiri Protocol powered by Algorand'}
+              status={'Live on Testnet'}
               description={`A crypto-economic primitive powering fast, below-zero micropayments, and unlocking dead capital from real-world assets and commodities in one piece of novel, robust infrastructure`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
-              imgWidth={"1366"}
-              imgHeight={"666"}
-              imgSrc={"/projects/jasiri.png"}
-              liveLink={"https://jasiriprotocol.org/"}
-              repoLink={"https://github.com/Safariblocks-LTD/jasiri-web-extension"}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/jasiri.png'}
+              liveLink={'https://jasiriprotocol.org/'}
+              repoLink={
+                'https://github.com/Safariblocks-LTD/jasiri-web-extension'
+              }
               stack={
                 <>
                   <Icon
                     IconType={Html}
                     title="HTML"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={ReachIcon}
                     title="Reach"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={ReactJs}
                     title="React"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={AwsIcon}
                     title="Aws Cloud"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
                 </>
               }
             />
-            <FeaturedProjectCard
-              title={"NFTea Auction With Reach"}
-              status={"Just launched"}
+            {/* <FeaturedProjectCard
+              title={'NFTea Auction With Reach'}
+              status={'Just launched'}
               description={`Deploy an auction contract with reach on Etherium and Algorand`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
-              imgWidth={"1366"}
-              imgHeight={"666"}
-              imgSrc={"/projects/auction.png"}
-              liveLink={"https://bmscis.github.io/reach-tutorial/"}
-              repoLink={"https://github.com/BMscis/reach-tutorial"}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/auction.png'}
+              liveLink={'https://bmscis.github.io/reach-tutorial/'}
+              repoLink={'https://github.com/BMscis/reach-tutorial'}
               stack={
                 <>
                   <Icon
                     IconType={Html}
                     title="HTML"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={ReachIcon}
                     title="Reach"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={SvelteIcon}
                     title="Svelte"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={AwsIcon}
                     title="Aws Cloud"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
                 </>
               }
             />
-            {/* Project Two */}
             <FeaturedProjectCard
-              title={"Components view"}
-              status={"Currently working on"}
+              title={'Components view'}
+              status={'Currently working on'}
               description={`Created personal components and incorporated some Binance Websockets into the project`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row-reverse`}
-              imgWidth={"1366"}
-              imgHeight={"666"}
-              imgSrc={"/projects/components.png"}
-              liveLink={"https://bmscis.github.io/components/#co-story-1"}
-              repoLink={"https://github.com/BMscis/components"}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/components.png'}
+              liveLink={'https://bmscis.github.io/components/'}
+              repoLink={'https://github.com/BMscis/components'}
               stack={
                 <>
                   <Icon
                     IconType={Html}
                     title="HTML"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={Javascript}
                     title="Tailwind"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={Sass}
                     title="React"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
                 </>
               }
             />
-            {/* Project Three */}
             <FeaturedProjectCard
-              title={"Alumni Store"}
-              status={"launched"}
+              title={'Alumni Store'}
+              status={'launched'}
               description={`An Alumni page with access to alumni store with an alumni pass.`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
-              imgWidth={"1366"}
-              imgHeight={"666"}
-              imgSrc={"/projects/laa.png"}
-              liveLink={"https://bmscis.github.io/LW/"}
-              repoLink={"https://github.com/BMscis/LW/tree/Website3.0"}
+              imgWidth={'1366'}
+              imgHeight={'666'}
+              imgSrc={'/projects/laa.png'}
+              liveLink={'https://bmscis.github.io/LW/'}
+              repoLink={'https://github.com/BMscis/LW/tree/Website3.0'}
               stack={
                 <>
                   <Icon
                     IconType={Html}
                     title="HTML"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={Javascript}
                     title="Javascript"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
 
                   <Icon
                     IconType={Sass}
                     title="React"
-                    columnSizing={"w-auto"}
-                    width={"w-6"}
-                    height={"h-6"}
-                    flexDirection={"flex-row"}
-                    padding={"p-0"}
-                    titleMargins={"my-0 ml-1"}
-                    titleSize={"text-sm"}
-                    marginBottom={"mb-4"}
-                    marginRight={"mr-3"}
-                    textTransform={"uppercase"}
-                    fixedHeight={"h-auto"}
+                    columnSizing={'w-auto'}
+                    width={'w-6'}
+                    height={'h-6'}
+                    flexDirection={'flex-row'}
+                    padding={'p-0'}
+                    titleMargins={'my-0 ml-1'}
+                    titleSize={'text-sm'}
+                    marginBottom={'mb-4'}
+                    marginRight={'mr-3'}
+                    textTransform={'uppercase'}
+                    fixedHeight={'h-auto'}
                   />
                 </>
               }
-            />
+            /> */}
           </div>
 
           {/* Other Projects header */}
@@ -1245,14 +1380,14 @@ export default function Home() {
           <div className="flex flex-col-reverse w-full md:flex-row">
             <div className="w-full mb-4 md:pl-0 md:mb-0">
               <p className="text-lg">
-                I'm currently available to get involved in new projects, so
-                get in touch if you'd like to work together.
+                I'm currently available to get involved in new projects, so get
+                in touch if you'd like to work together.
               </p>
               <p className="text-lg">
-                Simply email me at{" "}
+                Simply email me at{' '}
                 <Link href="mailto:melvinwafula@gmail.com">
                   <a className="underline-link">melvinwafula@gmail.com</a>
-                </Link>{" "}
+                </Link>{' '}
                 and let's talk about your project!
               </p>
             </div>
@@ -1263,20 +1398,20 @@ export default function Home() {
         <footer className="flex flex-col w-full px-0 py-16 md:px-20 lg:px-24 section">
           <hr className="w-full h-1 mb-16 bg-white border-0 opacity-10"></hr>
           <div className="w-8 mb-4">
-          <Icon
+            <Icon
               IconType={Bmscis}
               title="Bmscis"
-              columnSizing={"w-1/4 sm:w-1/3 lg:w-1/6"}
-              width={"w-16 sm:w-24"}
-              height={"h-16 sm:h-24"}
-              padding={"p-0"}
-              flexDirection={"flex-col"}
-              titleMargins={"mt-4"}
-              titleSize={"text-sm sm:text-base"}
-              marginBottom={"mb-4"}
-              marginRight={"mr-0"}
-              textTransform={"normal-case"}
-              fixedHeight={"h-28"}
+              columnSizing={'w-1/4 sm:w-1/3 lg:w-1/6'}
+              width={'w-16 sm:w-24'}
+              height={'h-16 sm:h-24'}
+              padding={'p-0'}
+              flexDirection={'flex-col'}
+              titleMargins={'mt-4'}
+              titleSize={'text-sm sm:text-base'}
+              marginBottom={'mb-4'}
+              marginRight={'mr-0'}
+              textTransform={'normal-case'}
+              fixedHeight={'h-28'}
             />
           </div>
 
@@ -1287,13 +1422,13 @@ export default function Home() {
 
             <div className="flex md:hidden">
               <span className="mr-2">
-                <GitHubProfile marginBottom={"mb-0"} />
+                <GitHubProfile marginBottom={'mb-0'} />
               </span>
               <span className="mr-2">
-                <TwitterProfile marginBottom={"mb-0"} />
+                <TwitterProfile marginBottom={'mb-0'} />
               </span>
               <span className="mr-2">
-                <LinkedInProfile marginBottom={"mb-0"} />
+                <LinkedInProfile marginBottom={'mb-0'} />
               </span>
             </div>
           </div>
@@ -1305,9 +1440,9 @@ export default function Home() {
         <div className="container relative flex h-full mx-auto">
           {/* Profile Icons */}
           <div className="absolute bottom-0 items-center hidden mt-auto mr-auto text-white left-8 md:flex md:flex-col">
-            <GitHubProfile marginBottom={"mb-4"} />
-            <TwitterProfile marginBottom={"mb-4"} />
-            <LinkedInProfile marginBottom={"mb-4"} />
+            <GitHubProfile marginBottom={'mb-4'} />
+            <TwitterProfile marginBottom={'mb-4'} />
+            <LinkedInProfile marginBottom={'mb-4'} />
             <div className="w-0.5 bg-white h-24 opacity-20 mt-2"></div>
           </div>
 
@@ -1323,9 +1458,9 @@ export default function Home() {
               <svg
                 id="e5c888e5-3206-4553-8f53-60ee93248ad9"
                 className={`group rounded-sm transform  transition duration-500 ease-in-out hover:rotate-45 hover:scale-110 ${
-                  visibleSection === "home"
-                    ? "rotate-45 scale-110"
-                    : "rotate-0 scale-100"
+                  visibleSection === 'home'
+                    ? 'rotate-45 scale-110'
+                    : 'rotate-0 scale-100'
                 }`}
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1335,18 +1470,18 @@ export default function Home() {
                 {/* Fill */}
                 <path
                   className={`fill-current origin-center transform transition duration-200 ease-in-out group-hover:text-dark group-hover:rotate-90 ${
-                    visibleSection === "home"
-                      ? "text-white rotate-90"
-                      : "text-dark rotate-0"
+                    visibleSection === 'home'
+                      ? 'text-white rotate-90'
+                      : 'text-dark rotate-0'
                   }`}
                   d="M5.64 5.64h12.73v12.73H5.64z"
                 />
                 {/* Border */}
                 <path
                   className={`fill-current origin-center transform transition duration-500 ease-in-out group-hover:text-white group-hover:rotate-45 group-hover:opacity-100 ${
-                    visibleSection === "home"
-                      ? "text-white rotate-45 opacity-100"
-                      : "text-white rotate-45 opacity-40"
+                    visibleSection === 'home'
+                      ? 'text-white rotate-45 opacity-100'
+                      : 'text-white rotate-45 opacity-40'
                   }`}
                   d="M12 22.41L1.59 12 12 1.59 22.41 12zM4.41 12L12 19.59 19.59 12 12 4.41z"
                 />
@@ -1362,9 +1497,9 @@ export default function Home() {
               <svg
                 id="e5c888e5-3206-4553-8f53-60ee93248ad9"
                 className={`group rounded-sm transform  transition duration-500 ease-in-out hover:rotate-45 hover:scale-110 ${
-                  visibleSection === "about"
-                    ? "rotate-45 scale-110"
-                    : "rotate-0 scale-100"
+                  visibleSection === 'about'
+                    ? 'rotate-45 scale-110'
+                    : 'rotate-0 scale-100'
                 }`}
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1374,18 +1509,18 @@ export default function Home() {
                 {/* Fill */}
                 <path
                   className={`fill-current origin-center transform transition duration-200 ease-in-out group-hover:text-dark group-hover:rotate-90 ${
-                    visibleSection === "about"
-                      ? "text-white rotate-90"
-                      : "text-dark rotate-0"
+                    visibleSection === 'about'
+                      ? 'text-white rotate-90'
+                      : 'text-dark rotate-0'
                   }`}
                   d="M5.64 5.64h12.73v12.73H5.64z"
                 />
                 {/* Border */}
                 <path
                   className={`fill-current origin-center transform transition duration-500 ease-in-out group-hover:text-white group-hover:rotate-45 group-hover:opacity-100 ${
-                    visibleSection === "about"
-                      ? "text-white rotate-45 opacity-100"
-                      : "text-white rotate-45 opacity-40"
+                    visibleSection === 'about'
+                      ? 'text-white rotate-45 opacity-100'
+                      : 'text-white rotate-45 opacity-40'
                   }`}
                   d="M12 22.41L1.59 12 12 1.59 22.41 12zM4.41 12L12 19.59 19.59 12 12 4.41z"
                 />
@@ -1401,9 +1536,9 @@ export default function Home() {
               <svg
                 id="e5c888e5-3206-4553-8f53-60ee93248ad9"
                 className={`group rounded-sm transform  transition duration-500 ease-in-out hover:rotate-45 hover:scale-110 ${
-                  visibleSection === "skills"
-                    ? "rotate-45 scale-110"
-                    : "rotate-0 scale-100"
+                  visibleSection === 'skills'
+                    ? 'rotate-45 scale-110'
+                    : 'rotate-0 scale-100'
                 }`}
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1413,18 +1548,18 @@ export default function Home() {
                 {/* Fill */}
                 <path
                   className={`fill-current origin-center transform transition duration-200 ease-in-out group-hover:text-dark group-hover:rotate-90 ${
-                    visibleSection === "skills"
-                      ? "text-white rotate-90"
-                      : "text-dark rotate-0"
+                    visibleSection === 'skills'
+                      ? 'text-white rotate-90'
+                      : 'text-dark rotate-0'
                   }`}
                   d="M5.64 5.64h12.73v12.73H5.64z"
                 />
                 {/* Border */}
                 <path
                   className={`fill-current origin-center transform transition duration-500 ease-in-out group-hover:text-white group-hover:rotate-45 group-hover:opacity-100 ${
-                    visibleSection === "skills"
-                      ? "text-white rotate-45 opacity-100"
-                      : "text-white rotate-45 opacity-40"
+                    visibleSection === 'skills'
+                      ? 'text-white rotate-45 opacity-100'
+                      : 'text-white rotate-45 opacity-40'
                   }`}
                   d="M12 22.41L1.59 12 12 1.59 22.41 12zM4.41 12L12 19.59 19.59 12 12 4.41z"
                 />
@@ -1440,9 +1575,9 @@ export default function Home() {
               <svg
                 id="e5c888e5-3206-4553-8f53-60ee93248ad9"
                 className={`group rounded-sm transform transition duration-500 ease-in-out hover:rotate-45 hover:scale-110 ${
-                  visibleSection === "my-work"
-                    ? "rotate-45 scale-110"
-                    : "rotate-0 scale-100"
+                  visibleSection === 'my-work'
+                    ? 'rotate-45 scale-110'
+                    : 'rotate-0 scale-100'
                 }`}
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1452,18 +1587,18 @@ export default function Home() {
                 {/* Fill */}
                 <path
                   className={`fill-current origin-center transform transition duration-200 ease-in-out group-hover:text-dark group-hover:rotate-90 ${
-                    visibleSection === "my-work"
-                      ? "text-white rotate-90"
-                      : "text-dark rotate-0"
+                    visibleSection === 'my-work'
+                      ? 'text-white rotate-90'
+                      : 'text-dark rotate-0'
                   }`}
                   d="M5.64 5.64h12.73v12.73H5.64z"
                 />
                 {/* Border */}
                 <path
                   className={`fill-current origin-center transform transition duration-500 ease-in-out group-hover:text-white group-hover:rotate-45 group-hover:opacity-100 ${
-                    visibleSection === "my-work"
-                      ? "text-white rotate-45 opacity-100"
-                      : "text-white rotate-45 opacity-40"
+                    visibleSection === 'my-work'
+                      ? 'text-white rotate-45 opacity-100'
+                      : 'text-white rotate-45 opacity-40'
                   }`}
                   d="M12 22.41L1.59 12 12 1.59 22.41 12zM4.41 12L12 19.59 19.59 12 12 4.41z"
                 />
@@ -1479,9 +1614,9 @@ export default function Home() {
               <svg
                 id="e5c888e5-3206-4553-8f53-60ee93248ad9"
                 className={`group rounded-sm transform  transition duration-500 ease-in-out hover:rotate-45 hover:scale-110 ${
-                  visibleSection === "contact"
-                    ? "rotate-45 scale-110"
-                    : "rotate-0 scale-100"
+                  visibleSection === 'contact'
+                    ? 'rotate-45 scale-110'
+                    : 'rotate-0 scale-100'
                 }`}
                 data-name="Layer 1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -1491,18 +1626,18 @@ export default function Home() {
                 {/* Fill */}
                 <path
                   className={`fill-current origin-center transform transition duration-200 ease-in-out group-hover:text-dark group-hover:rotate-90 ${
-                    visibleSection === "contact"
-                      ? "text-white rotate-90"
-                      : "text-dark rotate-0"
+                    visibleSection === 'contact'
+                      ? 'text-white rotate-90'
+                      : 'text-dark rotate-0'
                   }`}
                   d="M5.64 5.64h12.73v12.73H5.64z"
                 />
                 {/* Border */}
                 <path
                   className={`fill-current origin-center transform transition duration-500 ease-in-out group-hover:text-white group-hover:rotate-45 group-hover:opacity-100 ${
-                    visibleSection === "contact"
-                      ? "text-white rotate-45 opacity-100"
-                      : "text-white rotate-45 opacity-40"
+                    visibleSection === 'contact'
+                      ? 'text-white rotate-45 opacity-100'
+                      : 'text-white rotate-45 opacity-40'
                   }`}
                   d="M12 22.41L1.59 12 12 1.59 22.41 12zM4.41 12L12 19.59 19.59 12 12 4.41z"
                 />
