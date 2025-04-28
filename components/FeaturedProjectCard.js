@@ -26,7 +26,7 @@ const FeaturedProjectCard = ({
     >
       {/* Project image */}
       <div className="flex flex-col w-full lg:w-5/6 my-auto">
-        <MockupToolbar />
+        {/* <MockupToolbar /> */}
         <Image
           src={imgSrc}
           width={imgWidth}
@@ -39,7 +39,7 @@ const FeaturedProjectCard = ({
       <div
         className={`grow flex flex-col relative w-full p-3.5 lg:w-1/2 lg:${float} lg:-translate-x-0 gap-y-2`}
       >
-        <p className="mb-0 tracking-wider small-text">{status}</p>
+        <p className={`mb-0 tracking-wider small-text ${status.includes('Mainnet') ? 'text-green-400' : 'text-yellow-200'}`}>{status}</p>
         <h3>{title}</h3>
         <div className="w-1/4 h-1 bg-brand mb-2">&nbsp;</div>
         <div className="flex flex-wrap mb-2">{stack}</div>
