@@ -1029,16 +1029,16 @@ export default function Home() {
               }
             />
             <FeaturedProjectCard
-              title={'Soti Ticketing Platform'}
-              status={'Live on Testnet'}
-              description={`A ticketing platform on the blockchain designed to empower the event creators`}
+              title={'DEFI P2P'}
+              status={'Live on Mainnet'}
+              description={`A P2P Lending Platform`}
               float={`right-0`}
               flexDirection={`flex-col lg:flex-row`}
               imgWidth={'1366'}
               imgHeight={'666'}
-              imgSrc={'/projects/soti.png'}
-              liveLink={'https://soti.vip/events/music'}
-              repoLink={'https://bitbucket.org/sotimedia/soti/src/version1-frontend/'}
+              imgSrc={'/projects/defip2p.png'}
+              liveLink={'https://www.defi-p2p.com/'}
+              repoLink={'https://github.com/defip2p'}
               stack={
                 <>
                   <Icon
@@ -1152,7 +1152,7 @@ export default function Home() {
                 </>
               }
             />
-            <FeaturedProjectCard
+            {/* <FeaturedProjectCard
               title={'Algobambino Marketplace'}
               status={'Live on Mainnet'}
               description={`Algobamino is a marketplace with a variety of tools such as auctions, raffles, and purchasing of NFTs. It also includes a swap with various coins`}
@@ -1261,7 +1261,7 @@ export default function Home() {
                   />
                 </>
               }
-            />
+            /> */}
             {/* <FeaturedProjectCard
               title={'Jasiri Protocol powered by Algorand'}
               status={'Live on Testnet'}
