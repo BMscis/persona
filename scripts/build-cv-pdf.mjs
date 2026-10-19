@@ -7,12 +7,18 @@
 // the script re-runs itself under Node 22, matching "engines" in package.json.
 
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const output = path.join(root, 'public', 'Melvin-Wafula-CV.pdf');
+// CV_VARIANT=google prints /cv?variant=google to variants/ (git-ignored) instead of public/.
+const variant = process.env.CV_VARIANT;
+const variantLabel = variant ? variant[0].toUpperCase() + variant.slice(1) : '';
+const output = variant
+  ? path.join(root, 'variants', `Melvin-Wafula-CV-${variantLabel}.pdf`)
+  : path.join(root, 'public', 'Melvin-Wafula-CV.pdf');
+const cvPath = variant ? `/cv?variant=${encodeURIComponent(variant)}` : '/cv';
 const port = Number(process.env.CV_PORT || 3123);
 const nodeMajor = Number(process.versions.node.split('.')[0]);
 
@@ -94,10 +100,15 @@ const printPdf = (url) => {
 // these fields, so replace the Info dictionary with a PDF incremental update: append
 // a new version of the Info object, a one-entry xref section and a trailer whose
 // /Prev points at Chrome's xref. The original bytes are left untouched.
+// Keep each subject in step with that variant's title in data/variants.js.
+const VARIANT_SUBJECTS = {
+  google: 'Senior Software Engineer, Backend and Full-Stack',
+};
+
 const META = {
   Title: 'Melvin Wafula - CV',
   Author: 'Melvin Wafula',
-  Subject: 'Senior Backend Engineer, Digital Assets and Digital Health',
+  Subject: VARIANT_SUBJECTS[variant] || 'Senior Backend Engineer, Digital Assets and Digital Health',
   Keywords: 'Backend, Node.js, TypeScript, Python, PostgreSQL, Digital assets, Algorand, Payments, Digital health, FHIR, WHO SMART Guidelines',
   Creator: 'Melvin Wafula',
 };
@@ -145,12 +156,13 @@ const setMetadata = (file) => {
 
 let server;
 try {
+  if (variant) mkdirSync(path.dirname(output), { recursive: true });
   if (process.env.CV_URL) {
     printPdf(process.env.CV_URL);
   } else {
     await run(next(['build']));
     server = next(['start', '-p', String(port)]);
-    const url = `http://localhost:${port}/cv`;
+    const url = `http://localhost:${port}${cvPath}`;
     await waitFor(url);
     printPdf(url);
   }

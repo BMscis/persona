@@ -1,19 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import {
-  profile,
-  skills,
-  experience,
-  earlierCareer,
-  projects,
-  organizations,
-  education,
-  certifications,
-} from '../data/profile';
+import { applyVariant } from '../data/variants';
 
 // Printable CV. Rendered on screen at /cv and printed to
 // public/Melvin-Wafula-CV.pdf by scripts/build-cv-pdf.mjs.
+// /cv?variant=<name> applies a role-specific variant from data/variants.js.
 
 const stripScheme = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
@@ -24,6 +17,19 @@ const SectionTitle = ({ children }) => (
 );
 
 export default function CV() {
+  const { query } = useRouter();
+  const {
+    profile,
+    skills,
+    experience,
+    earlierCareer,
+    projects,
+    organizations,
+    education,
+    certifications,
+    variant,
+  } = applyVariant(query.variant);
+
   return (
     <div className="min-h-screen bg-gray-100 print:bg-white">
       <Head>
@@ -53,7 +59,9 @@ export default function CV() {
         }
       `}</style>
 
-      <div className="flex justify-end max-w-3xl px-4 pt-6 mx-auto print:hidden">
+      <div
+        className={`flex justify-end max-w-3xl px-4 pt-6 mx-auto print:hidden ${variant ? 'invisible' : ''}`}
+      >
         <a
           href="/Melvin-Wafula-CV.pdf"
           download
