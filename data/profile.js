@@ -6,10 +6,10 @@ export const profile = {
   name: 'Melvin Wafula',
   fullName: 'Melvin Wakhungu Wafula',
   title: 'Senior Backend Engineer, Digital Assets & Digital Health',
-  location: 'Nairobi, Kenya',
+  location: 'Available for remote work',
   email: 'melvinwafula@gmail.com',
   phone: '+254 729 675 138',
-  site: 'https://persona-eosin.vercel.app',
+  site: 'https://melvin.pentacostai.com',
   links: {
     github: 'https://github.com/BMscis',
     linkedin: 'https://www.linkedin.com/in/melvin-wakhungu-26a29259/',
@@ -20,15 +20,15 @@ export const profile = {
   tagline:
     'I build backend systems for digital assets and digital health. In both, a wrong record costs someone their money or their care.',
   summary:
-    "Backend engineer in Nairobi with four years of professional work on digital assets. I've built lending platforms, NFT marketplaces, a bitcoin on-ramp and an on-chain game, and the lending platform I maintain at Shufl Labs moves over $10,000 in loans a month. Since 2025 I have also worked in digital health. I'm building a registry for kidney patients in Kenya and converting the national kidney guidelines into a WHO SMART Guideline. The two fields overlap more than people expect. Both need records you can audit, systems that recover cleanly when something fails, and shared standards so institutions can exchange data (FHIR in health, open ledgers in finance). That overlap is where I want to work next.",
+    "Backend engineer with four years of professional work on digital assets. I've built lending platforms, NFT marketplaces, a bitcoin on-ramp and an on-chain game, and the lending platform I maintain at Shufl Labs moves over $10,000 in loans a month. Since 2025 I have also worked in digital health. I'm building a national registry for kidney patients and converting the national kidney guidelines into a WHO SMART Guideline. The two fields overlap more than people expect. Both need records you can audit, systems that recover cleanly when something fails, and shared standards so institutions can exchange data (FHIR in health, open ledgers in finance). That overlap is where I want to work next.",
 };
 
 // Paragraphs for the website's About section.
 export const about = [
-  "I'm a backend engineer in Nairobi, and I came to software by an unusual route. I wrote and directed film, produced music for a few years, and sold bancassurance at KCB in 2022, the same year I started writing smart contracts for a living. Python at university was where the habit started.",
+  "I'm a backend engineer, and I came to software by an unusual route. I wrote and directed film, produced music for a few years, and sold bancassurance at KCB in 2022, the same year I started writing smart contracts for a living. Python at university was where the habit started.",
   "Most of my work since then has been with digital assets. I've built lending platforms, NFT marketplaces and a bitcoin on-ramp. The Goanna lending platform I maintain now handles over $10,000 in loans a month. Working on systems where a bug loses someone's money changed how I build. I assume any payment can fail halfway, so each one is safe to retry, and I trust the ledger over my own database when they disagree.",
-  "In 2025 I started on digital health. I'm building a registry for kidney patients in Kenya, and I'm turning the national kidney guidelines into a WHO SMART Guideline, the format WHO uses to make clinical guidance usable by software. A patient record and a loan record need the same things: a clear history, strict access and a standard format that other systems can read.",
-  "I also founded PentacostAi. Its first product, AlgoCity, is a city-trading game that's live on Algorand MainNet. I'm looking for senior backend roles in digital assets or digital health, remote or in Nairobi.",
+  "In 2025 I started on digital health. I'm building a national registry for kidney patients, and I'm turning the national kidney guidelines into a WHO SMART Guideline, the format WHO uses to make clinical guidance usable by software. A patient record and a loan record need the same things. Each needs a clear history, strict access and a standard format that other systems can read.",
+  "I also founded PentacostAi. Its first product, AlgoCity, is a city-trading game that's live on Algorand MainNet. I'm looking for senior backend roles in digital assets or digital health, and I've worked remotely for much of my career.",
 ];
 
 export const skills = [
@@ -103,7 +103,7 @@ export const experience = [
     org: 'PentacostAi',
     role: 'Founder & Lead Engineer',
     period: '2026 – Present',
-    location: 'Nairobi · Remote',
+    location: 'Remote',
     summary:
       'My own studio. The first product is AlgoCity, a four-player city-trading game on Algorand MainNet in which AI agents can take a seat.',
     points: [
@@ -135,7 +135,7 @@ export const experience = [
     org: 'MulaStack',
     role: 'Backend / Blockchain Developer',
     period: 'Mar 2024 – Present',
-    location: 'Nairobi',
+    location: '',
     summary: 'A service for buying bitcoin with local currency.',
     points: ['I work on the backend and the blockchain side of the purchase flow.'],
     stack: ['Bitcoin'],
@@ -144,7 +144,7 @@ export const experience = [
     org: 'Safariblocks',
     role: 'Lead Developer',
     period: 'Aug 2022 – Jul 2023',
-    location: 'Kenya',
+    location: '',
     summary:
       'Led development of the Jasiri Protocol on Algorand, a micropayments system meant to free up capital locked in real-world assets and commodities.',
     points: ['Led the build of the Jasiri browser extension and dApp through to Algorand TestNet.'],
@@ -163,7 +163,7 @@ export const experience = [
     org: 'KCB Bank Group',
     role: 'Bancassurance Specialist',
     period: 'May 2022 – Aug 2022',
-    location: 'Kenya',
+    location: '',
     summary: 'Sold insurance products through the bank.',
     points: [],
     stack: [],
@@ -172,7 +172,7 @@ export const experience = [
 
 // One line on the CV for roles outside software.
 export const earlierCareer =
-  'MyArt Productions, Nairobi. Writer and director from 2011 to 2014, then music producer and writer until 2018.';
+  'MyArt Productions. Writer and director from 2011 to 2014, then music producer and writer until 2018.';
 
 // Featured projects on the website (with screenshots).
 export const featuredProjects = [
@@ -252,7 +252,7 @@ export const projects = [
     title: 'DEFI-P2P',
     period: '2025',
     overview:
-      "Peer-to-peer lending on Algorand, which I built on my own: AlgoKit contracts, a Next.js frontend and Supabase, with CI that deploys the contracts to TestNet. Asset details that rarely change are cached separately from live balances, and requests are queued by priority so the dashboard loads what's on screen first.",
+      "Peer-to-peer lending on Algorand, which I built on my own. It runs on AlgoKit contracts, a Next.js frontend and Supabase, and CI deploys the contracts to TestNet. Asset details that rarely change are cached separately from live balances, and requests are queued by priority so the dashboard loads what's on screen first.",
     stack: ['AlgoKit', 'TypeScript', 'Next.js', 'Supabase'],
     repo: 'https://github.com/defip2p',
     link: 'https://www.defi-p2p.com/',
@@ -262,7 +262,7 @@ export const projects = [
     title: 'Table Banking model',
     period: '2025',
     overview:
-      "A white paper on the maths behind chamas, Kenya's community savings-and-credit groups. It sets rules for how much each member can borrow and how profit is shared (30% by savings, 70% by interest paid). I tested the model in Python against one group's real ledger.",
+      "A white paper on the maths behind chamas, community savings-and-credit groups. It sets rules for how much each member can borrow and how profit is shared (30% by savings, 70% by interest paid). I tested the model in Python against one group's real ledger.",
     stack: ['Python', 'Financial modelling', 'Data validation'],
     repo: null,
     link: null,

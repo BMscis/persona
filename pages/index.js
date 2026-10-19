@@ -36,7 +36,6 @@ const personJsonLd = {
   description: profile.summary,
   email: `mailto:${profile.email}`,
   url: profile.site,
-  address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
   sameAs: [profile.links.github, profile.links.linkedin, profile.links.blog],
   knowsLanguage: profile.languages,
   knowsAbout: skills.flatMap((s) => s.items),
@@ -392,7 +391,8 @@ export default function Home() {
               <li key={job.org} className="mb-12 ml-8 list-none">
                 <span className="absolute w-4 h-4 transform rotate-45 -left-2.5 bg-brand mt-1.5"></span>
                 <p className="mb-1 small-text">
-                  {job.period} · {job.location}
+                  {job.period}
+                  {job.location ? ` · ${job.location}` : ''}
                 </p>
                 <h3 className="mb-1 text-2xl">
                   {job.role} <span className="text-brand">· {job.org}</span>
@@ -501,8 +501,8 @@ export default function Home() {
           <SectionHeading>Contact</SectionHeading>
           <div className="w-full">
             <p className="text-lg">
-              I'm looking for senior backend work in digital assets or digital health, remote or
-              in Nairobi. I also take on contract work for payment, lending and health-data systems.
+              I'm looking for senior backend work in digital assets or digital health, and I'm
+              set up to work remotely. I also take on contract work for payment, lending and health-data systems.
             </p>
             <p className="text-lg">
               Email me at{' '}

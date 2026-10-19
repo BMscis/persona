@@ -10,6 +10,20 @@ import { applyVariant } from '../data/variants';
 
 const stripScheme = (url) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 
+// "A, B, C and D" with each name linked.
+const OrgList = ({ orgs }) => (
+  <>
+    {orgs.map((org, i) => (
+      <span key={org.name}>
+        {i > 0 ? (i === orgs.length - 1 ? ' and ' : ', ') : ''}
+        <a className="font-semibold text-gray-800 hover:text-brand" href={org.url}>
+          {org.name}
+        </a>
+      </span>
+    ))}
+  </>
+);
+
 const SectionTitle = ({ children }) => (
   <h2 className="mt-5 mb-2 font-body text-xs font-bold tracking-widest uppercase text-brand border-b border-gray-200 pb-1">
     {children}
@@ -104,11 +118,11 @@ export default function CV() {
             <a className="text-gray-600 hover:text-brand" href={profile.site}>
               {stripScheme(profile.site)}
             </a>
-            . For AI agents:{' '}
+            . AI agents can read{' '}
             <a className="text-gray-600 hover:text-brand" href={`${profile.site}/llms.txt`}>
               {stripScheme(profile.site)}/llms.txt
             </a>{' '}
-            and an MCP server at{' '}
+            or connect to my MCP server at{' '}
             <a className="text-gray-600 hover:text-brand" href={`${profile.site}/api/mcp`}>
               {stripScheme(profile.site)}/api/mcp
             </a>
@@ -198,22 +212,12 @@ export default function CV() {
           </>
         ) : null}
 
-        <SectionTitle>Open source & organisations</SectionTitle>
+        <SectionTitle>Organisations and languages</SectionTitle>
         <p className="mb-0 text-sm text-gray-800">
-          GitHub organisations:{' '}
-          {organizations.map((org, i) => (
-            <span key={org.name}>
-              <a className="text-gray-800 hover:text-brand" href={org.url}>
-                {org.name}
-              </a>{' '}
-              ({org.role}){i < organizations.length - 1 ? ', ' : '.'}
-            </span>
-          ))}{' '}
-          Writing at {stripScheme(profile.links.blog)}.
-        </p>
-        <p className="mt-1 mb-0 text-sm text-gray-800">
-          <span className="font-semibold text-gray-900">Languages: </span>
-          {profile.languages.join(', ')}
+          I run the <OrgList orgs={organizations.filter((o) => o.role === 'Admin')} /> GitHub
+          organisations and contribute to{' '}
+          <OrgList orgs={organizations.filter((o) => o.role !== 'Admin')} />. I write at{' '}
+          {stripScheme(profile.links.blog)}, and I speak {profile.languages.join(' and ')}.
         </p>
       </article>
     </div>

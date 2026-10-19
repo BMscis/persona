@@ -9,8 +9,9 @@ import * as base from './profile';
 export const variants = {
   google: {
     title: 'Senior Software Engineer, Backend & Full-Stack',
+    location: 'Nairobi, Kenya',
     summary:
-      "Software engineer in Nairobi with five years of software development, four and a half of them professional, mostly on server-side systems where users see every mistake: purchases, marketplaces, lending and games. I design and ship backends in Node.js, TypeScript and Python, and I write the tests that guard them. I led development as Lead Developer at Safariblocks and as founder of PentacostAi. Two of the products I've built are games that are live today: AlgoCity, a four-player strategy game, and the Mutant vs Zombies staking battles. I'm comfortable owning a feature from design review to production debugging, and I use AI coding tools every day, behind review gates that keep the output trustworthy.",
+      "Software engineer in Nairobi with five years of software development, four and a half of them professional, mostly on server-side systems where users see every mistake, such as purchases, marketplaces, lending and games. I design and ship backends in Node.js, TypeScript and Python, and I write the tests that guard them. I led development as Lead Developer at Safariblocks and as founder of PentacostAi. Two of the products I've built are games that are live today. One is AlgoCity, a four-player strategy game, and the other is the Mutant vs Zombies staking battles. I'm comfortable owning a feature from design review to production debugging, and I use AI coding tools every day, behind review gates that keep the output trustworthy.",
     skillsOrder: [
       'Languages',
       'Backend',
@@ -23,7 +24,7 @@ export const variants = {
     ],
     points: {
       PentacostAi: [
-        'Designed and built the game end to end: its rules as six smart contracts, a Next.js client, and a keeper service on Fly.io that keeps games moving when a player steps away.',
+        'Designed and built the game end to end, with its rules written as six smart contracts, a Next.js client, and a keeper service on Fly.io that keeps games moving when a player steps away.',
         'Built the purchase flow. One payment opens a game table, the charge settles only after the table exists, and each payment can be used once, so retries and double taps are safe.',
         'Wrote a specification for every contract and test suites in pytest, Jest and Playwright. Behaviour is proven in tests before each release.',
       ],
@@ -60,7 +61,7 @@ export const applyVariant = (name) => {
 
   return {
     ...base,
-    profile: { ...base.profile, title: v.title, summary: v.summary },
+    profile: { ...base.profile, title: v.title, summary: v.summary, location: v.location || base.profile.location },
     skills,
     experience,
     projects,
