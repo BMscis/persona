@@ -10,6 +10,7 @@ import FeaturedProjectCard from '../components/FeaturedProjectCard';
 import GitHubProfile from '../components/icons/GitHubProfile';
 import TwitterProfile from '../components/icons/TwitterProfile';
 import LinkedInProfile from '../components/icons/LinkedInProfile';
+import AgentChat from '../components/AgentChat';
 
 import {
   profile,
@@ -19,9 +20,31 @@ import {
   featuredProjects,
   projects,
   organizations,
+  education,
 } from '../data/profile';
 
 const CV_PATH = '/Melvin-Wafula-CV.pdf';
+
+// schema.org Person markup, so search engines and agents can read the profile
+// without parsing the page.
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  alternateName: profile.fullName,
+  jobTitle: profile.title,
+  description: profile.summary,
+  email: `mailto:${profile.email}`,
+  url: profile.site,
+  address: { '@type': 'PostalAddress', addressLocality: 'Nairobi', addressCountry: 'KE' },
+  sameAs: [profile.links.github, profile.links.linkedin, profile.links.blog],
+  knowsLanguage: profile.languages,
+  knowsAbout: skills.flatMap((s) => s.items),
+  alumniOf: education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.school })),
+  worksFor: experience
+    .filter((job) => job.period.includes('Present'))
+    .map((job) => ({ '@type': 'Organization', name: job.org })),
+};
 
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
@@ -163,7 +186,15 @@ export default function Home() {
           content="https://raw.githubusercontent.com/BMscis/persona/master/public/projects/persona.png"
         ></meta>
         <link rel="icon" href="/favicon/favicon.ico" />
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="Profile for language models" />
+        <link rel="alternate" type="application/json" href="/api/profile" title="Profile as JSON" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </Head>
+
+      <AgentChat email={profile.email} />
 
       {/* Full-screen Menu */}
       <div
@@ -308,6 +339,12 @@ export default function Home() {
                 <a href={CV_PATH} className="btn-outline btn-lg">
                   Download CV
                 </a>
+                <button
+                  className="btn-outline btn-lg"
+                  onClick={() => window.dispatchEvent(new Event('open-agent'))}
+                >
+                  Ask my AI assistant
+                </button>
               </div>
             </div>
           </div>

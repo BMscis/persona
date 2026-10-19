@@ -90,6 +90,21 @@ export default function CV() {
               {stripScheme(profile.links.linkedin)}
             </a>
           </p>
+          <p className="mt-1 mb-0 text-xs text-gray-600">
+            <span className="font-semibold text-gray-900">Ask my AI assistant</span> at{' '}
+            <a className="text-gray-600 hover:text-brand" href={profile.site}>
+              {stripScheme(profile.site)}
+            </a>
+            . For AI agents:{' '}
+            <a className="text-gray-600 hover:text-brand" href={`${profile.site}/llms.txt`}>
+              {stripScheme(profile.site)}/llms.txt
+            </a>{' '}
+            and an MCP server at{' '}
+            <a className="text-gray-600 hover:text-brand" href={`${profile.site}/api/mcp`}>
+              {stripScheme(profile.site)}/api/mcp
+            </a>
+            .
+          </p>
         </header>
 
         <SectionTitle>Profile</SectionTitle>
