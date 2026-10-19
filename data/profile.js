@@ -170,10 +170,6 @@ export const experience = [
   },
 ];
 
-// One line on the CV for roles outside software.
-export const earlierCareer =
-  'MyArt Productions. Writer and director from 2011 to 2014, then music producer and writer until 2018.';
-
 // Featured projects on the website (with screenshots).
 export const featuredProjects = [
   {

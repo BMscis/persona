@@ -36,7 +36,6 @@ export default function CV() {
     profile,
     skills,
     experience,
-    earlierCareer,
     projects,
     organizations,
     education,
@@ -166,10 +165,6 @@ export default function CV() {
             ) : null}
           </section>
         ))}
-        <p className="mb-0 text-sm text-gray-600">
-          <span className="font-semibold text-gray-900">Earlier career · </span>
-          {earlierCareer}
-        </p>
 
         <SectionTitle>Selected projects</SectionTitle>
         {projects.filter((project) => project.cv).map((project) => (
