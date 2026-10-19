@@ -15,6 +15,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        print: { raw: "print" },
+      },
       fontFamily: {
         display: ['"acumin-pro-wide"', "sans-serif"],
         body: ['"acumin-pro"', "sans-serif"],

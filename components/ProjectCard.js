@@ -4,7 +4,7 @@ import GitHub from "./icons/GitHub";
 import Button from "./Button";
 
 const ProjectCard = ({ project }) => {
-  const { title, overview, stack, link, repo, isSiteLive } = project;
+  const { title, period, overview, stack, link, repo } = project;
 
   return (
     <div className="flex flex-col w-full rounded-sm bg-mid px-7 py-7">
@@ -33,7 +33,8 @@ const ProjectCard = ({ project }) => {
           transform="translate(14.34 -10.94) rotate(15)"
         />
       </svg>
-      <p className="inline-block px-0 pb-5 mb-4 text-xl font-bold border-b-4 flex-start border-brand">
+      {period ? <p className="mb-1 small-text">{period}</p> : null}
+      <p className="inline-block px-0 pb-5 mb-4 text-xl font-bold text-white border-b-4 flex-start border-brand">
         {title}
       </p>
       <p>{overview}</p>
@@ -71,8 +72,6 @@ const ProjectCard = ({ project }) => {
             icon={<GitHub square={true} />}
           />
         ) : null}
-
-        {!isSiteLive ? <p className="my-4 small-text">Coming soon</p> : null}
       </div>
     </div>
   );
