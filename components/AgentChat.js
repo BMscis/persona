@@ -16,7 +16,9 @@ const TOOL_LABELS = {
   match_job_description: 'compared the job description',
 };
 
-const AgentChat = ({ email }) => {
+// showLauncher: whether the floating button is shown. The page hides it while the
+// hero (which has its own "Ask my AI assistant" button) is on screen.
+const AgentChat = ({ email, showLauncher = true }) => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
@@ -83,7 +85,7 @@ const AgentChat = ({ email }) => {
 
   return (
     <>
-      {!open ? (
+      {!open && showLauncher ? (
         <button
           onClick={() => setOpen(true)}
           className="fixed z-40 flex items-center px-5 py-3 text-sm font-semibold text-white transform -translate-x-1/2 rounded-full shadow-lg bottom-6 left-1/2 bg-brand hover:bg-brandAlt focus:outline-none"

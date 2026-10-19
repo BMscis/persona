@@ -56,6 +56,7 @@ export default function CV() {
       <div className="flex justify-end max-w-3xl px-4 pt-6 mx-auto print:hidden">
         <a
           href="/Melvin-Wafula-CV.pdf"
+          download
           className="px-4 py-2 text-sm text-white rounded-sm bg-brand hover:bg-brandAlt hover:text-white"
         >
           Download PDF

@@ -7,7 +7,7 @@
 // the script re-runs itself under Node 22, matching "engines" in package.json.
 
 import { spawn, spawnSync } from 'node:child_process';
-import { existsSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -86,7 +86,61 @@ const printPdf = (url) => {
   if (!existsSync(output) || result.status !== 0) {
     throw new Error(`Browser failed to print: ${result.stderr?.toString().slice(-500)}`);
   }
+  setMetadata(output);
   console.log(`Wrote ${path.relative(root, output)} (${Math.round(statSync(output).size / 1024)} KB)`);
+};
+
+// Chrome leaves Author empty and puts its own user agent in Creator. Job sites read
+// these fields, so replace the Info dictionary with a PDF incremental update: append
+// a new version of the Info object, a one-entry xref section and a trailer whose
+// /Prev points at Chrome's xref. The original bytes are left untouched.
+const META = {
+  Title: 'Melvin Wafula - CV',
+  Author: 'Melvin Wafula',
+  Subject: 'Senior Backend Engineer, Digital Assets and Digital Health',
+  Keywords: 'Backend, Node.js, TypeScript, Python, PostgreSQL, Digital assets, Algorand, Payments, Digital health, FHIR, WHO SMART Guidelines',
+  Creator: 'Melvin Wafula',
+};
+
+const pdfString = (s) => `(${s.replace(/[\\()]/g, (c) => `\\${c}`)})`;
+const pdfDate = (d) => `D:${d.toISOString().replace(/[-:T]/g, '').slice(0, 14)}Z`;
+
+const setMetadata = (file) => {
+  const pdf = readFileSync(file);
+  const tail = pdf.subarray(Math.max(0, pdf.length - 2048)).toString('latin1');
+  const prevXref = Number(tail.match(/startxref\s+(\d+)\s+%%EOF\s*$/)?.[1]);
+  const trailer = tail.slice(tail.lastIndexOf('trailer'));
+  const size = trailer.match(/\/Size\s+(\d+)/)?.[1];
+  const rootRef = trailer.match(/\/Root\s+(\d+\s+\d+\s+R)/)?.[1];
+  const infoNum = trailer.match(/\/Info\s+(\d+)\s+0\s+R/)?.[1];
+  const id = trailer.match(/\/ID\s*(\[[^\]]*\])/)?.[1];
+  if (!prevXref || !size || !rootRef || !infoNum) {
+    throw new Error('Unexpected PDF trailer from the browser; metadata not written.');
+  }
+
+  const now = pdfDate(new Date());
+  const fields = { ...META, CreationDate: now, ModDate: now };
+  const body = Object.entries(fields)
+    .map(([k, v]) => `/${k} ${k.endsWith('Date') ? `(${v})` : pdfString(v)}`)
+    .join('\n');
+
+  let out = '\n';
+  const objOffset = pdf.length + Buffer.byteLength(out, 'latin1');
+  out += `${infoNum} 0 obj\n<<${body}>>\nendobj\n`;
+  const xrefOffset = pdf.length + Buffer.byteLength(out, 'latin1');
+  // Start the section with the object 0 free-list head so strict readers that
+  // expect a zero-indexed table accept it.
+  const entry = `${String(objOffset).padStart(10, '0')} 00000 n\r\n`;
+  const xref =
+    infoNum === '1'
+      ? `xref\n0 2\n0000000000 65535 f\r\n${entry}`
+      : `xref\n0 1\n0000000000 65535 f\r\n${infoNum} 1\n${entry}`;
+  out +=
+    xref +
+    `trailer\n<</Size ${size}\n/Root ${rootRef}\n/Info ${infoNum} 0 R\n/Prev ${prevXref}${id ? `\n/ID ${id}` : ''}>>\n` +
+    `startxref\n${xrefOffset}\n%%EOF\n`;
+
+  writeFileSync(file, Buffer.concat([pdf, Buffer.from(out, 'latin1')]));
 };
 
 let server;

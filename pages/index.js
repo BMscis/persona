@@ -194,7 +194,10 @@ export default function Home() {
         />
       </Head>
 
-      <AgentChat email={profile.email} />
+      <AgentChat
+        email={profile.email}
+        showLauncher={scrolling && visibleSection !== 'home'}
+      />
 
       {/* Full-screen Menu */}
       <div
@@ -229,7 +232,7 @@ export default function Home() {
                 </a>
               </li>
               <li className="z-50 block py-2 mt-6 list-none lg:inline-block">
-                <a href={CV_PATH} className="text-lg btn-brand btn-lg">
+                <a href={CV_PATH} download className="text-lg btn-brand btn-lg">
                   Download CV
                 </a>
               </li>
@@ -271,7 +274,7 @@ export default function Home() {
                 </a>
               </li>
               <li className="z-50 hidden ml-4 list-none lg:inline-block">
-                <a href={CV_PATH} className="btn-brand btn-md">
+                <a href={CV_PATH} download className="btn-brand btn-md">
                   Download CV
                 </a>
               </li>
@@ -336,7 +339,7 @@ export default function Home() {
                 >
                   See my work
                 </button>
-                <a href={CV_PATH} className="btn-outline btn-lg">
+                <a href={CV_PATH} download className="btn-outline btn-lg">
                   Download CV
                 </a>
                 <button
@@ -507,7 +510,7 @@ export default function Home() {
                 {profile.email}
               </a>{' '}
               or{' '}
-              <a href={CV_PATH} className="underline-link">
+              <a href={CV_PATH} download className="underline-link">
                 download my CV
               </a>
               .
