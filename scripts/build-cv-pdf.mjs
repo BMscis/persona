@@ -14,7 +14,12 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // CV_VARIANT=google prints /cv?variant=google to variants/ (git-ignored) instead of public/.
 const variant = process.env.CV_VARIANT;
-const variantLabel = variant ? variant[0].toUpperCase() + variant.slice(1) : '';
+// Short names are acronyms ("un" -> "UN"); longer ones are capitalised ("google" -> "Google").
+const variantLabel = !variant
+  ? ''
+  : variant.length <= 3
+    ? variant.toUpperCase()
+    : variant[0].toUpperCase() + variant.slice(1);
 const output = variant
   ? path.join(root, 'variants', `Melvin-Wafula-CV-${variantLabel}.pdf`)
   : path.join(root, 'public', 'Melvin-Wafula-CV.pdf');
@@ -103,6 +108,7 @@ const printPdf = (url) => {
 // Keep each subject in step with that variant's title in data/variants.js.
 const VARIANT_SUBJECTS = {
   google: 'Senior Software Engineer, Backend and Full-Stack',
+  un: 'Senior Full-Stack Developer, Web Platforms',
 };
 
 const META = {

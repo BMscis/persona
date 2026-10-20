@@ -39,6 +39,55 @@ export const variants = {
     },
     projects: ['Kenya Renal Registry', 'Kidney guidelines to WHO SMART', 'DEFI-P2P', 'Algox402 SDK'],
   },
+
+  // Web platform developer roles at UN agencies. Adds the evidence confirmed in the
+  // job-requirements review (PHP via the WordPress migration, PostgreSQL search,
+  // AI retrieval). Drupal, Elasticsearch and multilingual CMS work are left out
+  // because there is no evidence for them.
+  un: {
+    title: 'Senior Full-Stack Developer, Web Platforms',
+    location: 'Nairobi, Kenya · Open to remote work',
+    summary:
+      "Full-stack developer with over four years of professional experience building and modernising web platforms in TypeScript, JavaScript, Python and PHP. I moved RandGallery.com off a custom WordPress theme and onto Next.js, and I'm leading the merge of two legacy marketplace backends into one Node.js service on PostgreSQL and Redis. I build interfaces in React and Next.js, put REST APIs and relational databases behind them, and use Git, code review and CI/CD on my projects. I've also built search and retrieval, from fuzzy PostgreSQL search to an AI assistant that answers only from structured data. Since 2025 I've worked in digital health on WHO SMART Guidelines, and I want to bring the same care to platforms that serve the public.",
+    skillsOrder: [
+      'Languages',
+      'Frontend & apps',
+      'Backend',
+      'Cloud & delivery',
+      'Testing',
+      'AI tooling',
+      'Digital health',
+      'Digital assets',
+    ],
+    skillsAdd: {
+      Languages: ['PHP (WordPress)', 'HTML5', 'CSS3'],
+      'Frontend & apps': ['WordPress (custom themes, migration)'],
+      Backend: ['PostgreSQL trigram search'],
+      'AI tooling': ['Tool-based retrieval', 'MCP servers'],
+    },
+    points: {
+      'Shufl Labs': [
+        "Moved RandGallery.com off its custom WordPress theme, written in PHP and hosted on Linode, onto the Shufl platform's Next.js and TypeScript stack. I ported the Shuffle page, fixed image loading from IPFS and the production build, and retired the old site, which now redirects to the new platform.",
+        'Leading the merge of two legacy marketplace backends, Shufl on AWS EC2 and RandSwap on Google App Engine with Firestore, into one Node.js and Express service on PostgreSQL and Redis.',
+        "Built the platform's search on PostgreSQL trigram similarity. It finds collections and NFTs by approximate name and ranks exact ID matches first, and a separate aggregator merges listings from several marketplaces and removes duplicates.",
+        "Each transaction is submitted under a unique key, so a retry can't charge anyone twice. A background reconciler checks stuck transactions against the chain and corrects the records, and 300 automated tests cover the service.",
+        "I review each module's design before it's ported and again afterwards, including code written by AI tools.",
+        'Found an encryption key hardcoded in the old code, with its IV reused. The new service keeps no keys in code and reads secrets from AWS Secrets Manager.',
+        'Reworked the Goanna lending platform, which now handles over $10,000 in loans a month, and brought its cloud costs down significantly.',
+      ],
+      PentacostAi: [
+        'Designed and built AlgoCity end to end, with six smart contracts, a Next.js client and a keeper service on Fly.io.',
+        'Built a paid web endpoint where one payment opens a game table. The charge settles only after the table exists, and a payment can never be used twice.',
+        'Wrote a specification for every contract and covered the system with pytest, Jest and Playwright tests.',
+      ],
+    },
+    projects: [
+      'Kenya Renal Registry',
+      'Kidney guidelines to WHO SMART',
+      'Digital Health Ecosystem Explorer',
+      'Portfolio AI assistant and MCP server',
+    ],
+  },
 };
 
 // Returns the CV data with a variant applied, or the base CV for an unknown name.
@@ -46,10 +95,12 @@ export const applyVariant = (name) => {
   const v = variants[name];
   if (!v) return { ...base, variant: null };
 
-  const byGroup = new Map(base.skills.map((s) => [s.group, s]));
+  const byGroup = new Map(
+    base.skills.map((s) => [s.group, { ...s, items: [...s.items, ...((v.skillsAdd || {})[s.group] || [])] }])
+  );
   const skills = [
     ...v.skillsOrder.map((g) => byGroup.get(g)).filter(Boolean),
-    ...base.skills.filter((s) => !v.skillsOrder.includes(s.group)),
+    ...base.skills.filter((s) => !v.skillsOrder.includes(s.group)).map((s) => byGroup.get(s.group)),
   ];
   const experience = base.experience.map((job) =>
     v.points[job.org] ? { ...job, points: v.points[job.org] } : job

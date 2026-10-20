@@ -294,6 +294,16 @@ export const projects = [
     cv: false,
   },
   {
+    title: 'Portfolio AI assistant and MCP server',
+    period: '2026',
+    overview:
+      "An assistant on my portfolio site that answers recruiters by retrieving facts from my structured CV data through tool calls, so it can't say anything the CV doesn't. The same tools are published to other AI agents through an MCP server, alongside llms.txt and schema.org markup.",
+    stack: ['Next.js', 'DeepSeek API', 'MCP', 'Tool calling'],
+    repo: 'https://github.com/BMscis/persona',
+    link: null,
+    cv: false,
+  },
+  {
     title: 'Research-to-Skill Generator',
     period: '2026',
     overview:
